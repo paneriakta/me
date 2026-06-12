@@ -101,8 +101,8 @@ header{
   font-family:var(--font-display);font-weight:400;font-style:italic;font-size:20px;text-decoration:none;
   display:flex;align-items:center;gap:10px;
 }
-.logo-mark{height:30px;width:auto;display:block}
-footer .logo-mark{height:36px}
+.logo-mark{height:30px; width:auto;display:block}
+footer .logo-mark{height:30px}
 .nav-links{display:flex;gap:26px;list-style:none}
 .nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .15s}
 .nav-links a:hover{color:var(--vermilion)}
