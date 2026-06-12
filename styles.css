@@ -15,7 +15,7 @@
   --radius:14px;
   --max:1080px;
   --font-display:'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body:'Spline Sans', sans-serif;
+  --font-body:'Google Sans', 'Google Sans Text', Roboto, sans-serif;
   --font-mono:'IBM Plex Mono', monospace;
 }
 
@@ -32,7 +32,7 @@ img{max-width:100%;display:block}
 a{color:inherit}
 ::selection{background:var(--marigold);color:var(--ink)}
 
-h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:1.12;letter-spacing:0}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;font-style:italic;line-height:1.16;letter-spacing:0}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
 
@@ -98,14 +98,11 @@ header{
   padding:16px 28px;max-width:var(--max);margin:0 auto;gap:16px;
 }
 .logo{
-  font-family:var(--font-display);font-weight:800;font-size:19px;text-decoration:none;
+  font-family:var(--font-display);font-weight:400;font-style:italic;font-size:20px;text-decoration:none;
   display:flex;align-items:center;gap:10px;
 }
-.logo .daub{
-  width:16px;height:16px;border-radius:50% 60% 55% 45%;
-  background:var(--marigold);display:inline-block;
-  box-shadow:2px 2px 0 var(--vermilion);
-}
+.logo-mark{height:30px;width:auto;display:block}
+footer .logo-mark{height:36px}
 .nav-links{display:flex;gap:26px;list-style:none}
 .nav-links a{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-soft);transition:color .15s}
 .nav-links a:hover{color:var(--vermilion)}
@@ -284,7 +281,7 @@ section[id]{scroll-margin-top:84px} /* sticky header offset for anchor jumps */
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:24px;text-align:left;
 }
-.outcome .num{font-family:var(--font-display);font-weight:800;font-size:34px;color:var(--vermilion);line-height:1}
+.outcome .num{font-family:var(--font-display);font-weight:400;font-style:italic;font-size:34px;color:var(--vermilion);line-height:1}
 .outcome .label{font-size:13.5px;color:var(--ink-soft);margin-top:10px}
 
 /* screenshot placeholders / gallery */
@@ -337,6 +334,109 @@ section[id]{scroll-margin-top:84px} /* sticky header offset for anchor jumps */
 .project-nav .title{font-weight:600;margin-top:8px;font-size:16px}
 .project-nav a.next{text-align:right}
 
+
+/* ============================================================
+   INSPECT MODE — FULL COVERAGE
+   Every container gets an outline + token label via ::before.
+   No extra markup needed; labels are CSS-generated per component.
+   ============================================================ */
+#inspect:checked ~ .page main section,
+#inspect:checked ~ .page header,
+#inspect:checked ~ .page footer,
+#inspect:checked ~ .page .ticker,
+#inspect:checked ~ .page .identity,
+#inspect:checked ~ .page .work-card,
+#inspect:checked ~ .page .principle,
+#inspect:checked ~ .page .beyond,
+#inspect:checked ~ .page .outcome,
+#inspect:checked ~ .page .meta-sheet,
+#inspect:checked ~ .page .pdf-banner,
+#inspect:checked ~ .page .project-nav a,
+#inspect:checked ~ .page .shot .placeholder,
+#inspect:checked ~ .page .shot .frame,
+#inspect:checked ~ .page .btn{
+  outline:1px dashed var(--spec);
+  outline-offset:3px;
+  position:relative;
+}
+
+/* the label chip */
+/* header must stay sticky — the blanket position:relative above would break it.
+   sticky is itself a positioned context, so the ::before label still anchors fine. */
+#inspect:checked ~ .page header{position:sticky}
+
+#inspect:checked ~ .page main section::before,
+#inspect:checked ~ .page header::before,
+#inspect:checked ~ .page footer::before,
+#inspect:checked ~ .page .ticker::before,
+#inspect:checked ~ .page .identity::before,
+#inspect:checked ~ .page .work-card::before,
+#inspect:checked ~ .page .principle::before,
+#inspect:checked ~ .page .beyond::before,
+#inspect:checked ~ .page .outcome::before,
+#inspect:checked ~ .page .meta-sheet::before,
+#inspect:checked ~ .page .pdf-banner::before,
+#inspect:checked ~ .page .project-nav a::before,
+#inspect:checked ~ .page .shot .placeholder::before,
+#inspect:checked ~ .page .shot .frame::before,
+#inspect:checked ~ .page .btn::before{
+  position:absolute;top:-10px;left:8px;z-index:20;
+  font-family:var(--font-mono);font-size:10px;font-weight:500;
+  line-height:1;letter-spacing:.02em;
+  color:var(--spec);background:var(--card);
+  border:1px solid var(--spec);border-radius:4px;
+  padding:3px 7px;white-space:nowrap;pointer-events:none;
+}
+
+/* per-component token labels */
+#inspect:checked ~ .page main section::before{content:"section · pad 108/0/84 · max-w var(--max)"}
+#inspect:checked ~ .page .hero::before{content:"hero · pad 116/0/64 · h1 clamp(40\2013 76)"}
+#inspect:checked ~ .page .project-hero::before{content:"project-hero · pad 100/0/48"}
+#inspect:checked ~ .page .contact::before{content:"contact · centered · pad-b 110"}
+#inspect:checked ~ .page header::before{content:"header · sticky · blur(8px) · bg paper/88%"; top:auto;bottom:-10px}
+#inspect:checked ~ .page footer::before{content:"footer · pad 48/0/84 · bg var(--card)"}
+#inspect:checked ~ .page .ticker::before{content:"ticker · mono 13 · loop 28s linear"}
+#inspect:checked ~ .page .identity::before{content:"card.identity · r var(--radius) · pad 26/22"}
+#inspect:checked ~ .page .work-card::before{content:"card.work · r14 · pad 30 · bg #fff/5%"}
+#inspect:checked ~ .page .principle::before{content:"row.principle · grid 120px/1fr · pad 30/0"}
+#inspect:checked ~ .page .beyond::before{content:"card.beyond · r14 · pad 26 · gradient 145deg"}
+#inspect:checked ~ .page .outcome::before{content:"stat.outcome · r14 · pad 24 · num: display/800"}
+#inspect:checked ~ .page .meta-sheet::before{content:"sheet.meta · grid 3col · gap 0/36"}
+#inspect:checked ~ .page .pdf-banner::before{content:"banner.pdf · bg var(--ink) · pad 36"}
+#inspect:checked ~ .page .project-nav a::before{content:"nav.project · r14 · pad 24"}
+#inspect:checked ~ .page .shot .placeholder::before{content:"figure.shot · 16:9 · dashed 2 var(--line)"}
+#inspect:checked ~ .page .shot .frame::before{content:"figure.shot · r14 · shadow 0/14/36 ink/7%"}
+#inspect:checked ~ .page .btn::before{content:"btn · r99 · pad 13/26 · 600"}
+
+/* don't double-label: in-flow .spec spans + dashed targets still work on top */
+
+/* token legend panel — fixed, bottom-right, only in inspect mode */
+.token-legend{display:none}
+#inspect:checked ~ .page .token-legend{
+  display:block;position:fixed;right:18px;bottom:18px;z-index:99;
+  background:var(--card);border:1px solid var(--spec);border-radius:10px;
+  padding:14px 16px;width:230px;
+  font-family:var(--font-mono);font-size:11px;color:var(--ink);
+  box-shadow:0 10px 30px rgba(47,72,88,.18);
+}
+.token-legend h4{
+  font-family:var(--font-mono);font-weight:500;font-size:10px;
+  letter-spacing:.08em;color:var(--spec);margin:0 0 10px;text-transform:uppercase;
+}
+.token-legend .tk{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.token-legend .sw{width:13px;height:13px;border-radius:4px;border:1px solid var(--line);flex:none}
+.token-legend .sw.paper{background:var(--paper)}
+.token-legend .sw.ink{background:var(--ink)}
+.token-legend .sw.soft{background:var(--ink-soft)}
+.token-legend .sw.accent{background:var(--marigold)}
+.token-legend .sw.deep{background:var(--vermilion)}
+.token-legend .sw.line{background:var(--line)}
+.token-legend .ty{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);line-height:1.7}
+
+@media (max-width:700px){
+  #inspect:checked ~ .page .token-legend{display:none} /* too cramped on mobile */
+}
+
 /* ============================================================
    FOOTER + THE CAT
    ============================================================ */
@@ -354,8 +454,8 @@ footer{
 /* pixel cat — black & orange tortie, two-frame walk cycle, zero JS.
    Each frame is one box-shadow pixel map; .f1/.f2 alternate via steps(). */
 .cat{
-  --cat-black:#181210;
-  --cat-orange:#E8762D;
+  --cat-black:var(--ink);      /* #2F4858 */
+  --cat-orange:var(--marigold); /* #DC6A6A */
   position:absolute;bottom:14px;left:-120px;
   width:102px;height:48px;
   animation:prowl 30s linear infinite;
@@ -407,6 +507,8 @@ footer{
   animation:stepB .38s steps(1) infinite;
 }
 
+.paddingtop {  padding-top: 40px; }
+.paddingbottom { padding-bottom: 40px; }
 /* ============================================================
    ACCESSIBILITY + RESPONSIVE
    ============================================================ */

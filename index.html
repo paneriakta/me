@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://aktapaneri.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500&family=Spline+Sans:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Roboto:wght@400;500;600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
 
 <header>
   <nav class="nav" aria-label="Main">
-    <a class="logo" href="index.html"><span class="daub" aria-hidden="true"></span>Akta Paneri</a>
+    <a class="logo" href="index.html"><img src="assets/aplogo.svg" class="logo-mark" alt="">Akta Paneri</a>
     <ul class="nav-links">
       <li><a href="#work">Work</a></li>
       <li><a href="#how">How I lead</a></li>
@@ -39,7 +39,7 @@
 
   <!-- HERO -->
   <section class="hero wrap">
-    <p class="eyebrow">HEAD OF DESIGN · DESIGN SYSTEMS · UX ENGINEERING — BANGALORE, IN</p>
+    <p class="eyebrow">HEAD OF DESIGN · DESIGN SYSTEMS · UX ENGINEERING </p>
     <h1 class="spec-target">
       <span class="spec h1-type">font: Playfair Display / clamp(40–76px)</span>
       I design the system.<br>
@@ -62,20 +62,20 @@
   <div class="ticker" aria-label="Currently">
     <div class="ticker-track">
       <span><b>currently:</b> scaling a design team of 8 at Scrut</span>
-      <span><b>painting:</b> gouache, mostly when the cat allows</span>
-      <span><b>riding:</b> early-morning loops around Whitefield</span>
+      <span><b>painting:</b> texture, mostly when the cat allows</span>
+      <span><b>riding:</b> early-morning loops around Bengaluru</span>
       <span><b>printing:</b> 8-bit pixel art in four-colour PLA</span>
-      <span><b>fostering:</b> one extremely opinionated kitten</span>
+      <span><b>fostering:</b> one extremely opinionated mother cat & a kitten</span>
       <span><b>currently:</b> scaling a design team of 8 at Scrut</span>
-      <span><b>painting:</b> gouache, mostly when the cat allows</span>
-      <span><b>riding:</b> early-morning loops around Whitefield</span>
+      <span><b>painting:</b> texture, mostly when the cat allows</span>
+      <span><b>riding:</b> early-morning loops around Bengaluru</span>
       <span><b>printing:</b> 8-bit pixel art in four-colour PLA</span>
-      <span><b>fostering:</b> one extremely opinionated kitten</span>
+      <span><b>fostering:</b> one extremely opinionated mother cat & a kitten</span>
     </div>
   </div>
 
   <!-- IDENTITIES -->
-  <section class="wrap">
+  <section class="wrap paddingtop paddingbottom">
     <div class="section-head">
       <h2>One person, four practices</h2>
       <span class="tag">// they all feed each other</span>
@@ -170,7 +170,7 @@
     </section>
 
   <!-- PRINCIPLES -->
-  <section class="wrap" id="how">
+  <section class="wrap paddingtop" id="how">
     <div class="section-head">
       <h2>How I lead</h2>
       <span class="tag">// opinions, held loosely but documented thoroughly</span>
@@ -208,32 +208,33 @@
   </section>
 
   <!-- BEYOND -->
-  <section class="wrap" id="beyond">
+  <section class="wrap paddingtop paddingbottom" id="beyond">
     <div class="section-head">
       <h2>Off-canvas</h2>
       <span class="tag">// the parts that don't fit in a case study</span>
     </div>
     <div class="beyond-grid">
-      <div class="beyond paint">
-        <span class="glyph" aria-hidden="true">🖌️</span>
-        <h3>Gouache &amp; canvas</h3>
-        <p>Painting is where I take the risks I can't take in enterprise software. No design reviews, no stakeholders, occasionally a cat on the palette.</p>
-      </div>
+     
       <div class="beyond film">
         <span class="glyph" aria-hidden="true">🎥</span>
         <h3>Frames per second</h3>
         <p>Filmmaking taught me that what you cut matters more than what you keep — a lesson I re-learn in every product roadmap conversation.</p>
       </div>
+       <div class="beyond paint">
+        <span class="glyph" aria-hidden="true">🖌️</span>
+        <h3>Gouache &amp; canvas</h3>
+        <p>Painting is where I take the risks I can't take in enterprise software. No design reviews, no stakeholders, occasionally a cat on the palette.</p>
+      </div>
       <div class="beyond cycle">
-        <span class="glyph" aria-hidden="true">🚴</span>
+        <span class="glyph" aria-hidden="true">🏍️</span>
         <h3>Two wheels, 5 AM</h3>
-        <p>Bangalore is a different city before sunrise. Cycling is where the hard problems untangle themselves — usually around kilometre twenty.</p>
+        <p>Bangalore is a different city before sunrise. Riding is where the hard problems untangle themselves — usually around kilometre one-twenty.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section class="contact wrap" id="contact">
+  <section class="contact wrap paddingtop" id="contact">
     <h2>Let's make something worth inspecting.</h2>
     <p>Design leadership, design systems, speaking, or just a good conversation about where AI and design teams are headed — my inbox is open.</p>
     <!-- TODO: replace with your real email -->
@@ -244,16 +245,28 @@
 
 <footer>
   <div class="wrap footer-row">
-    <span>© 2026 Akta Paneri · Bangalore</span>
+    <img src="assets/aplogo.svg" class="logo-mark" alt="Akta Paneri logo">
+    <span>© 2026 Akta Paneri </span>
     <span>built by hand in HTML + CSS · no frameworks were harmed</span>
-    <!-- TODO: replace with your real LinkedIn URL -->
-    <span><a href="https://www.linkedin.com/in/aktapaneri" rel="me">LinkedIn</a></span>
+    
+    <span><a href="https://www.linkedin.com/in/aktapaneri" rel="me">LinkedIn</a> </span>
   </div>
-  <div class="cat" title="quality assurance lead" aria-hidden="true"><div class="f1"></div><div class="f2"></div></div>
-  <div class="kitten" title="junior QA (intern)" aria-hidden="true"><div class="f1"></div><div class="f2"></div></div>
+  <div class="cat" title="Shadow" aria-hidden="true"><div class="f1"></div><div class="f2"></div></div>
+  <div class="kitten" title="Ash" aria-hidden="true"><div class="f1"></div><div class="f2"></div></div>
 </footer>
 
 <span class="grid-note">inspect mode: on · grid 8px · tokens visible</span>
+
+<aside class="token-legend" aria-hidden="true">
+  <h4>tokens</h4>
+  <div class="tk"><span class="sw paper"></span>--paper · #FFF5F4</div>
+  <div class="tk"><span class="sw ink"></span>--ink · #2F4858</div>
+  <div class="tk"><span class="sw soft"></span>--ink-soft · #54707F</div>
+  <div class="tk"><span class="sw accent"></span>--marigold · #DC6A6A</div>
+  <div class="tk"><span class="sw deep"></span>--vermilion · #B84A4A</div>
+  <div class="tk"><span class="sw line"></span>--line · #E5D9D8</div>
+  <div class="ty">display: Playfair 400 italic<br>body: Google Sans/Roboto<br>mono: IBM Plex<br>r: 14 · grid: 8px</div>
+</aside>
 
 </div><!-- /.page -->
 
